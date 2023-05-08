@@ -1,16 +1,11 @@
-import { ReactNode } from "react";
-import { countContext } from "../contexts/CountContext";
+import { CountContext } from "../contexts/CountContext";
+import { useContext } from "react";
 
-interface Props {
-  children?: ReactNode
-}
-
-function Child(props: Props) {
-  const {contextValue} = countContext()
+function Child() {
+  const {countValue} = useContext(CountContext)
   return (
     <div className="grid place-items-center bg-red-200 w-1/2 m-5 p-5">
-      Count: {contextValue}
-      {props.children}
+      Count: {countValue}
     </div>
   );
 }
