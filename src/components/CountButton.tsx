@@ -1,10 +1,10 @@
-import { CountContext } from "../contexts/CountContext";
-import { useContext } from "react";
+interface Props {
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+}
 
-function CountButton() {
-  let { countValue, setCountValue} = useContext(CountContext)
-  function handleClick(){
-    setCountValue(countValue + 1)
+function CountButton(props: Props) {
+  function handleClick() {
+    props.setCount((prev) => prev + 1);
   }
   return (
     <button className="bg-gray-500 p-2 m-5" onClick={handleClick}>
