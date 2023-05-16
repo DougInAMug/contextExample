@@ -1,36 +1,18 @@
-# vite-react-typescript-tailwind-boilerplate
+# Minimal context examples
 
-This is a vite boilerplate set up for React, Typescript and Tailwind.
+Install: `(p)npm install`  
+Run: `vite`
 
-To copy this repo:
-```bash
-cp -r path/to/this/repo path/to/newRepo
-```
+This repo shows two minimal examples which use react context to do the same thing: use an onClick to update shared state. The component structure is:
 
-To remove current git remote:
-```bash
-git remote remove origin
-```
+- App
+    - Parent
+        - Button
+    - Parent
+        - Child
 
-To install:
-```bash
-pnpm install
-# OR
-npm install
-```
+Context is used at the App level to allow a button press to update a counter and show the count in the child.
 
-Other node modules you may want to install:
-```bash
-pnpm install json-server axios
-# OR
-npm install json-server axios
-```
+The main branch puts as much as possible into the `CountContext.ts(x)`. The `minimal-context` branch puts in as little as possible.
 
-To start vite:
-```bash
-node run dev
-# OR
-vite
-```
-
-
+![](./screenshot.png)
