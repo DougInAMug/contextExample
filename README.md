@@ -10,16 +10,19 @@ npm install
 vite
 ```
 
-This repo shows two minimal examples which use react context to do the same thing: use an onClick to update shared state. A third example uses prop drilling tot the same effect. The component structure is:
+This repo shows 4 minimal examples (button click -> display count) of how state can be shared _across_ react components. Each branch holds a different method:
+
+- `main`: using context, with as much as possible abstracted to the context.
+- `minimal-context`: using context, with as little as possible abstracted to the context.
+- `prop-drilling`: with props passed down through intermediary components.
+- `prop-sharing-composition`: with props passed directly to sub-child components.
+
+The component structure in each case is:
 
 - App
     - Parent
         - Button
     - Parent
         - Child
-
-Context is used at the App level to allow a button press to update a counter and show the count in the child.
-
-The main branch puts as much as possible into the `CountContext.ts(x)`. The `minimal-context` branch puts in as little as possible. The `composition-prop-sharing` example achieves the same effect using `useState` at the app level, and sharing it child and button components via props, without prop-drilling.
 
 ![](./screenshot.png)
