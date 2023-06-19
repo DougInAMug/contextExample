@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="bg-red-700 grid place-items-center m-5 p-5">
       <h1 className="text-3xl font-bold">App</h1>
-      <h2>State shared/updated with prop-drilling</h2>
+      <h2>State shared/updated with prop sharing via composition</h2>
       <Parent>
         <CountButton setCount={setCount} />
       </Parent>
